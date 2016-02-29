@@ -32,7 +32,9 @@ public class divNode extends htmlNode
 
     @Override
     public String printElement() {
+        //This makes a div
         String allHtml = start + htmlID + softEnd + "";
+        //then adds all its elements to the conents of the html text
         for(htmlNode in : contents )
         {
             allHtml += "\n" + in.printElement();
