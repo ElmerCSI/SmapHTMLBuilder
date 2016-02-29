@@ -14,10 +14,10 @@ public class buttonNode extends htmlNode{
     buttonNode(htmlAction action) {
         Type = "button";
         htmlID = makeID(Type);
-        start= "<button ";//type=\"button\"
+        start= "<button ";
         softEnd= ">";
         end= "</button>";
-        Action = action.toString();
+        Action = action.toString();//this assing the action you want the button to preform on click
     } 
     public void setAction(htmlAction temp) {
         Action = temp.toString();
@@ -25,6 +25,9 @@ public class buttonNode extends htmlNode{
 
     @Override
     public String printElement() {
+        //Returns a button formatted in html
+        //Currently the buttons will not have any text attached
+        //they also ALWAYS pass themselvs to any action they call
         String allHtml = start + htmlID + Action + "(this)\" " + softEnd + "" + end + "\n     ";
         
 

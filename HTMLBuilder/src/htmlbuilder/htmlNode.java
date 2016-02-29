@@ -20,6 +20,9 @@ public class htmlNode {
     public String end = "";
     public final  String makeID(String type)
     {
+        //Makes an ID that is unique. This keeps us from having duplicate IDs.
+        //There are other ways to prevent duplicates. This is the easiest. 
+        //The IDs it makes are not human readable. 
         return " id=\"" + type + UUID.randomUUID().toString().replaceAll("-", "") + "\"";
     }
     

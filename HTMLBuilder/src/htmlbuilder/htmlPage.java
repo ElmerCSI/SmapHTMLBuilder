@@ -12,8 +12,8 @@ import java.util.ArrayList;
  * @author Luc
  */
 public class htmlPage extends htmlNode{
-    ArrayList<htmlAction> Actions = new ArrayList<htmlAction>();
-    ArrayList<htmlNode> contents = new ArrayList<htmlNode>();
+    ArrayList<htmlAction> Actions = new ArrayList<htmlAction>();//This keeps track of the funcitons on the page
+    ArrayList<htmlNode> contents = new ArrayList<htmlNode>();//this keeps track of the elements on the page. 
     public void addNewElement(htmlNode temp)
     {
         contents.add(temp);
@@ -32,7 +32,7 @@ public class htmlPage extends htmlNode{
     }
     
     @Override
-    public String printElement()
+    public String printElement()//Prints and HTML page
     {
         String allHtml = start + "";
         for(htmlNode in : contents )
@@ -40,7 +40,7 @@ public class htmlPage extends htmlNode{
             allHtml += "\n" + in.printElement();
         }
    
-        allHtml = allHtml.replaceAll("\n", "\n     "); //adds a level of indenting 
+        allHtml = allHtml.replaceAll("\n", "\n     "); //adds a level of indenting to all the elments before. This makes things pretty
         
         allHtml += "\n     <script>";
         for(htmlAction in : Actions )

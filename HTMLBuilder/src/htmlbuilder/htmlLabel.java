@@ -11,7 +11,7 @@ package htmlbuilder;
  */
 public class htmlLabel extends htmlNode{
     
-    public String Text = "";
+    public String Text = "";//text the label will display
     htmlLabel(String text) {
         Type = "label";
         htmlID = makeID(Type);
@@ -26,6 +26,7 @@ public class htmlLabel extends htmlNode{
 
     @Override
     public String printElement() {
+        //prints out an html string making  a lebel
         String allHtml = start + htmlID + softEnd + " " + Text + "" + end + "\n     ";
         
 
